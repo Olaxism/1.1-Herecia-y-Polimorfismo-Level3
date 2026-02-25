@@ -1,4 +1,4 @@
-package Nivel2.exercise1.classes;
+package Nivel2.classes;
 
 public abstract class Phone {
 

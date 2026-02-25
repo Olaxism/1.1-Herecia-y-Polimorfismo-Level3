@@ -1,7 +1,7 @@
-package Nivel2.exercise1.classes;
+package Nivel2.classes;
 
-import Nivel2.exercise1.interfaces.Camera;
-import Nivel2.exercise1.interfaces.Watch;
+import Nivel2.interfaces.Camera;
+import Nivel2.interfaces.Watch;
 
 public class SmartPhone extends Phone implements Camera, Watch {
 

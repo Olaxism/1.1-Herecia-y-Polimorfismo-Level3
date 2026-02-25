@@ -1,4 +1,4 @@
-package Nivel2.exercise1.interfaces;
+package Nivel2.interfaces;
 
 public interface Camera {
 

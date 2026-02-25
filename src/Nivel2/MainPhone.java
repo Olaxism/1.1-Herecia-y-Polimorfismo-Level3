@@ -1,6 +1,6 @@
-package Nivel2.exercise1;
+package Nivel2;
 
-import Nivel2.exercise1.classes.SmartPhone;
+import Nivel2.classes.SmartPhone;
 
 public class MainPhone {public static void main(String[] args) {
     // TODO Auto-generated method stub
