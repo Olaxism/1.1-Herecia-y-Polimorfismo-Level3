@@ -19,6 +19,24 @@ public class TenisNews extends News{
         return players;
     }
 
+    public int getScore() {
+
+        int totalScore = 4;
+        if (players.equals("Federer") || players.equals("Nadal") || players.equals("Djokovic")) {
+            totalScore += 3;
+        }
+        return totalScore;
+    }
+
+    public double getPrice() {
+
+        double totalPrice = 150;
+        if (players.equals("Federer") || players.equals("Nadal") || players.equals("Djokovic")) {
+            totalPrice += 100;
+        }
+        return totalPrice;
+    }
+
     @Override
     public String toString() {
         return "TenisNews{" +

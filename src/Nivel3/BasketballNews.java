@@ -19,6 +19,7 @@ public class BasketballNews extends News {
     public String getClub() {
         return club;
     }
+
     public int getScore() {
 
         int totalScore = 4;
