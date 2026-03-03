@@ -6,10 +6,12 @@ public class BasketballNews extends News {
     private String club;
 
 
-    public BasketballNews (String title, String text, int score, double price, String competition, String club) {
-            super (title, text, score, price);
+    public BasketballNews (String title, String competition, String club) {
+            super (title);
             this.competition = competition;
             this.club = club;
+            this.score = getScore();
+            this.price = getPrice();
     }
 
     public String getCompetition() {

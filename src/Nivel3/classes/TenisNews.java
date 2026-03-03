@@ -5,10 +5,12 @@ public class TenisNews extends News {
     private String competition;
     private String players;
 
-    public TenisNews (String title, String text, int score, double price, String competition, String players) {
-        super ( title, text, score, price);
+    public TenisNews (String title, String competition, String players) {
+        super ( title);
         this.competition = competition;
         this.players = players;
+        this.score = getScore();
+        this.price = getPrice();
     }
 
     public String getCompetition() {

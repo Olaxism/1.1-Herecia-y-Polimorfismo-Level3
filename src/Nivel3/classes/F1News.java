@@ -4,9 +4,11 @@ public class F1News extends News {
 
     private String squad;
 
-    public F1News (String title, String text, int score, double price, String squad) {
-        super (title, text, score, price);
+    public F1News (String title, String squad) {
+        super (title);
         this.squad = squad;
+        this.score = getScore();
+        this.price = getPrice();
     }
 
     public String getSquad() {

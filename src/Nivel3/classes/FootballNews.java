@@ -6,11 +6,13 @@ public class FootballNews extends News {
     private String club;
     private String player;
 
-    public FootballNews (String title, String text, int score, double price, String competition, String club, String player) {
-        super (title, text, score, price);
+    public FootballNews (String title, String competition, String club, String player) {
+        super (title);
         this.competition = competition;
         this.club = club;
         this.player = player;
+        this.score = getScore();
+        this.price = getPrice();
     }
 
         public String getCompetition() {

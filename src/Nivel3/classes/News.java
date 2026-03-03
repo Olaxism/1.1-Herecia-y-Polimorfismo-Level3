@@ -2,16 +2,16 @@ package Nivel3.classes;
 
 public abstract class News {
 
-    private String title;
-    private String text;
-    private static int score;
-    private static double price;
+    protected String title;
+    protected String text;
+    protected int score;
+    protected double price;
 
-    public News (String title, String text, int score, double price) {
+    public News (String title) {
         this.title = title;
         this.text = "";
-        this.score = score;
-        this.price = price;
+        this.score = 0;
+        this.price = 0;
     }
 
     public String getTitle() {
@@ -22,13 +22,14 @@ public abstract class News {
         return text;
     }
 
-    public int getScore() {
-        return score;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public double getPrice() {
-        return price;
-    }
+    public abstract int getScore();
+
+    public abstract double getPrice();
+
 
     @Override
     public String toString() {

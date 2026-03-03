@@ -4,9 +4,11 @@ public class MotoNews extends News {
 
     private String team;
 
-    public MotoNews (String title, String text, int score, double price, String team) {
-        super (title, text, score, price);
+    public MotoNews (String title, String team) {
+        super (title);
         this.team = team;
+        this.score = getScore();
+        this.price = getPrice();
     }
 
     public String getTeam() {
