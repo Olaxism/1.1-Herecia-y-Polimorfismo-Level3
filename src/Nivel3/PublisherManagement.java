@@ -46,6 +46,26 @@ public class PublisherManagement {
 
     private static void addNewsToRedactor() {
         System.out.println("---Agregar noticia a un Redactor---");
+
+        Redactor foundRedactor = null;
+
+        do {
+
+            System.out.println("\nIntroduzca el DNI del Redactor quien cubrirá la noticia");
+            String dni = sc.next();
+
+            for (int i = 0; i < sp.getRedactors().size(); i++) {
+                if (sp.getRedactors().get(i).getDni().equalsIgnoreCase(dni)) {
+                    foundRedactor = sp.getRedactors().get(i);
+                    System.out.println("Redactor Encontrado");
+                    break;
+                }
+            }
+            if (foundRedactor == null) {
+                System.out.println("Este DNI no pertenece a ninguno de nuestro redactores actuales");
+            }
+        }    while (foundRedactor == null);
+
         System.out.println("\nPor favor, teclee número del deporte de la noticia");
         System.out.println("1. Futbol");
         System.out.println("2. Baloncesto");
@@ -70,9 +90,10 @@ public class PublisherManagement {
                 System.out.println("Jugador: ");
                 String player = sc.next();
 
-            FootballNews newFN = new FootballNews( title,);
+            FootballNews newFN = new FootballNews( title, competition, club, player);
+            foundRedactor.addToMyNews(newFN);
 
-
+            System.out.println("Noticia agregada a Redactor: " + foundRedactor.getName();
         }
     }
 }
