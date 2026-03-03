@@ -1,4 +1,4 @@
-package Nivel3;
+package Nivel3.classes;
 
 public class BasketballNews extends News {
 

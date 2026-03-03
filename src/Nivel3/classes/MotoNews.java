@@ -1,6 +1,6 @@
-package Nivel3;
+package Nivel3.classes;
 
-public class MotoNews extends News{
+public class MotoNews extends News {
 
     private String team;
 

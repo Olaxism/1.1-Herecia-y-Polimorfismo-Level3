@@ -1,11 +1,11 @@
-package Nivel3;
+package Nivel3.classes;
 
 public abstract class News {
 
     private String title;
     private String text;
-    private int score;
-    private double price;
+    private static int score;
+    private static double price;
 
     public News (String title, String text, int score, double price) {
         this.title = title;

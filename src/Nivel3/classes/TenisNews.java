@@ -1,6 +1,6 @@
-package Nivel3;
+package Nivel3.classes;
 
-public class TenisNews extends News{
+public class TenisNews extends News {
 
     private String competition;
     private String players;

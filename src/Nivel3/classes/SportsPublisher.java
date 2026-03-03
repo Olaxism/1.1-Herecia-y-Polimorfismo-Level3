@@ -1,4 +1,4 @@
-package Nivel3;
+package Nivel3.classes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +23,8 @@ public class SportsPublisher {
         this.allMotoNews = new ArrayList<>();
     }
 
-    public List<Redactor> getRedactors() {
-        return List.copyOf(redactors);
+    public ArrayList<Redactor> getRedactors() {
+        return redactors;
     }
 
     public List<News> getAllNews() {
@@ -49,6 +49,34 @@ public class SportsPublisher {
 
     public List<News> getAllMotoNews() {
         return List.copyOf(allMotoNews);
+    }
+
+    public void addRedactor (Redactor redactor) {
+        redactors.add(redactor);
+    }
+
+    public void addNews(News news) {
+        allNews.add(news);
+    }
+
+    public void addNews(FootballNews fnews) {
+        allFootballNews.add(fnews);
+    }
+
+    public void addNews(BasketballNews bnews) {
+        allBasketballNews.add(bnews);
+    }
+
+    public void addNews(F1News f1news) {
+        allF1News.add(f1news);
+    }
+
+    public void addNews(TenisNews tnews) {
+        allTenisNews.add(tnews);
+    }
+
+    public void addNews(MotoNews mnews) {
+        allMotoNews.add(mnews);
     }
 
     @Override

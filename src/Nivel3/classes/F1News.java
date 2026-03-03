@@ -1,6 +1,6 @@
-package Nivel3;
+package Nivel3.classes;
 
-public class F1News extends News{
+public class F1News extends News {
 
     private String squad;
 

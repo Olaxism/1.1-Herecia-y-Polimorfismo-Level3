@@ -1,4 +1,4 @@
-package Nivel3;
+package Nivel3.classes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +10,12 @@ public class Redactor {
     private double salary;
     private ArrayList<News> myNews;
 
-    public Redactor (String name, String dni, String salary) {
+    private static double baseSalary = 1500;
+
+    public Redactor (String name, String dni) {
         this.name = name;
         this.dni = dni;
-        this.salary = 1500;
+        this.salary = baseSalary;
         this.myNews = new ArrayList<>();
     }
 
@@ -35,6 +37,22 @@ public class Redactor {
 
     public void addToMyNews (News news) {
         myNews.add(news);
+    }
+
+    public void removeNews (String title) {
+        for (int i = myNews.size() -1; i >= 0; i--) {
+            if (myNews.get(i).getTitle().equalsIgnoreCase(title)) {
+                myNews.remove(i);
+            }
+        }
+    }
+
+    public static void setBaseSalary(double newSalary) {
+        baseSalary = newSalary;
+    }
+
+    public static double getBaseSalary() {
+        return baseSalary;
     }
 
     @Override
