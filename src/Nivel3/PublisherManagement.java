@@ -9,13 +9,13 @@ public class PublisherManagement {
     private static SportsPublisher sp = new SportsPublisher();
     private static Scanner sc = new Scanner(System.in);
 
-    private static void introRedactor(){
+    public static void introRedactor(){
         System.out.println("---Introducir Redactor---");
         System.out.println("\n Introduzca nombre: ");
-        String name = sc.next();
+        String name = sc.nextLine();
 
         System.out.println("\n Introduzca DNI: ");
-        String dni = sc.next();
+        String dni = sc.nextLine();
 
         Redactor newRedactor = new Redactor(name, dni);
         sp.addRedactor(newRedactor);
@@ -23,10 +23,10 @@ public class PublisherManagement {
         System.out.println("Nuevo redactor agregado");
     }
 
-    private static void removeRedactor() {
+    public static void removeRedactor() {
         System.out.println("---Eliminar Redactor---");
         System.out.println("\n Introduzca DNI: ");
-        String dni = sc.next();
+        String dni = sc.nextLine();
 
         boolean found = false;
         for (int i = 0; i < sp.getRedactors().size(); i++) {
@@ -42,14 +42,14 @@ public class PublisherManagement {
         }
     }
 
-    private static void addNewsToRedactor() {
+    public static void addNewsToRedactor() {
         System.out.println("---Agregar noticia a un Redactor---");
 
         Redactor foundRedactor = null;
 
         do {
             System.out.println("\nIntroduzca el DNI del Redactor quien cubrirá la noticia");
-            String dni = sc.next();
+            String dni = sc.nextLine();
 
             for (int i = 0; i < sp.getRedactors().size(); i++) {
                 if (sp.getRedactors().get(i).getDni().equalsIgnoreCase(dni)) {
@@ -72,71 +72,78 @@ public class PublisherManagement {
 
         int option = sc.nextInt();
 
+        sc.nextLine();
+
         System.out.println("Titulo de la noticia: ");
-        String title = sc.next();
+        String title = sc.nextLine();
 
         switch (option) {
 
             case 1:
                 System.out.println("Competición: ");
-                String competition = sc.next();
+                String competition = sc.nextLine();
 
                 System.out.println("Club: ");
-                String club = sc.next();
+                String club = sc.nextLine();
 
                 System.out.println("Jugador: ");
-                String player = sc.next();
+                String player = sc.nextLine();
 
             FootballNews newFN = new FootballNews( title, competition, club, player);
             foundRedactor.addToMyNews(newFN);
+            break;
 
             case 2:
                 System.out.println("Competición: ");
-                String competition2 = sc.next();
+                String competition2 = sc.nextLine();
 
                 System.out.println("Club: ");
-                String club2 = sc.next();
+                String club2 = sc.nextLine();
 
             BasketballNews newBN = new BasketballNews (title, competition2, club2);
             foundRedactor.addToMyNews(newBN);
+            break;
 
             case 3:
                 System.out.println("Competición: ");
-                String competition3 = sc.next();
+                String competition3 = sc.nextLine();
 
                 System.out.println("Jugadores: ");
-                String players = sc.next();
+                String players = sc.nextLine();
 
             TenisNews newTN = new TenisNews (title, competition3, players);
             foundRedactor.addToMyNews(newTN);
+            break;
 
             case 4:
                 System.out.println("Escuderia: ");
-                String squad = sc.next();
+                String squad = sc.nextLine();
 
             F1News newF1N = new F1News (title, squad);
             foundRedactor.addToMyNews(newF1N);
+            break;
 
             case 5:
                 System.out.println("Equipo: ");
-                String team = sc.next();
+                String team = sc.nextLine();
 
             MotoNews newMN = new MotoNews (title, team);
             foundRedactor.addToMyNews(newMN);
+            break;
 
         }
 
         System.out.println("Noticia agregada a Redactor: " + foundRedactor.getName());
     }
 
-    private static void removeNewsFromRedactor() {
+    public static void removeNewsFromRedactor() {
         System.out.println("---Eliminar Noticia de un Redactor---");
 
         Redactor foundRedactor = null;
 
         do {
             System.out.println("\nIntroduzca el DNI del Redactor");
-            String dni = sc.next();
+            String dni = sc.nextLine();
 
             for (int i = 0; i < sp.getRedactors().size(); i++) {
                 if (sp.getRedactors().get(i).getDni().equalsIgnoreCase(dni)) {
@@ -155,7 +162,7 @@ public class PublisherManagement {
 
         do {
             System.out.println("\n Por favor, Introduzca el titulo de la noticia que desea eliminar: ");
-            String title = sc.next();
+            String title = sc.nextLine();
 
             for (News n : foundRedactor.getMyNews()) {
                 if ( n.getTitle().equalsIgnoreCase(title)) {
@@ -178,14 +185,14 @@ public class PublisherManagement {
 
     }
 
-    private static void showRedactorAllNews() {
+    public static void showRedactorAllNews() {
         System.out.println("---Mostrar todas las noticias de un Redactor---");
 
         Redactor foundRedactor = null;
 
         do {
             System.out.println("\nIntroduzca el DNI del Redactor");
-            String dni = sc.next();
+            String dni = sc.nextLine();
 
             for (int i = 0; i < sp.getRedactors().size(); i++) {
                 if (sp.getRedactors().get(i).getDni().equalsIgnoreCase(dni)) {
@@ -204,14 +211,14 @@ public class PublisherManagement {
 
         }
 
-    private static void totalScoreNews() {
+    public static void totalScoreNews() {
         System.out.println("---Mostrar puntuación de una noticia---");
 
         Redactor foundRedactor = null;
 
         do {
             System.out.println("\nIntroduzca el DNI del Redactor que tiene la noticia");
-            String dni = sc.next();
+            String dni = sc.nextLine();
 
             for (int i = 0; i < sp.getRedactors().size(); i++) {
                 if (sp.getRedactors().get(i).getDni().equalsIgnoreCase(dni)) {
@@ -229,7 +236,7 @@ public class PublisherManagement {
 
         do {
             System.out.println("\n Por favor, Introduzca el titulo de la noticia: ");
-            String title = sc.next();
+            String title = sc.nextLine();
 
             for (News n : foundRedactor.getMyNews()) {
                 if ( n.getTitle().equalsIgnoreCase(title)) {
@@ -251,14 +258,14 @@ public class PublisherManagement {
 
     }
 
-    private static void totalPriceNews() {
+    public static void totalPriceNews() {
         System.out.println("---Mostrar precio de una noticia---");
 
         Redactor foundRedactor = null;
 
         do {
             System.out.println("\nIntroduzca el DNI del Redactor que tiene la noticia");
-            String dni = sc.next();
+            String dni = sc.nextLine();
 
             for (int i = 0; i < sp.getRedactors().size(); i++) {
                 if (sp.getRedactors().get(i).getDni().equalsIgnoreCase(dni)) {
@@ -276,7 +283,7 @@ public class PublisherManagement {
 
         do {
             System.out.println("\n Por favor, Introduzca el titulo de la noticia: ");
-            String title = sc.next();
+            String title = sc.nextLine();
 
             for (News n : foundRedactor.getMyNews()) {
                 if ( n.getTitle().equalsIgnoreCase(title)) {
