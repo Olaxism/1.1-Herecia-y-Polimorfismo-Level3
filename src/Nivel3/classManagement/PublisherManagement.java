@@ -1,4 +1,4 @@
-package Nivel3;
+package Nivel3.classManagement;
 
 import Nivel3.classes.*;
 
