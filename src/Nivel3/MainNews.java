@@ -1,7 +1,6 @@
 package Nivel3;
 
 import Nivel3.classManagement.PublisherManagement;
-
 import java.util.Scanner;
 
 public class MainNews   {
